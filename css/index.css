@@ -1,0 +1,39 @@
+.topbar{
+    height: 60px;
+    border-bottom: 1px solid red;
+}
+
+body{
+    background-color: #FFFFFF;
+}
+
+.logo{
+    font-size: 28px ;
+    margin-top: 10px ;
+    font-weight: bold ;
+    margin-left: 20px ;
+}
+
+.toptext{
+    padding-top: 100px ;
+}
+
+.unacadmy{
+    background-color: #08BD80;
+    color: white; 
+    margin-top: 20px ;
+}
+
+.bs{
+    box-shadow: 10px 10px 40px #E7E9EB;
+}
+
+.result-div{
+    height: 100%;
+}
+
+#loading{
+    padding-top:100px ;
+    display: none ;
+
+}
