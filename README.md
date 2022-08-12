@@ -17,9 +17,9 @@
 
 ![alt text](https://github.com/nikhil8052/PlacementPrediction-ML/blob/master/project%20design/signin.png?raw=true)
 
-# Log In
+# Sign Up
 
-![alt text](https://github.com/nikhil8052/PlacementPrediction-ML/blob/master/project%20design/login.png?raw=true)
+![alt text](https://github.com/nikhil8052/PlacementPrediction-ML/blob/master/project%20design/signup.png?raw=true)
 
 # Test Cases
 
