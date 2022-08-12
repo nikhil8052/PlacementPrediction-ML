@@ -93,7 +93,7 @@ if (isset($_GET['token'])) {
                                     <div class="col-md-3"></div>
                                     <div class="col-md-6 result-div ">
                                         <marquee behavior="" direction="">
-                                            <h3 class="placed">Congraculations</h3>
+                                            <h3 class="placed"> congratulations </h3>
                                         </marquee>
                                         <marquee behavior="" direction="">
                                             <h3 class="not-placed">Not Placed.</h3>
