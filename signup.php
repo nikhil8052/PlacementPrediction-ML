@@ -8,12 +8,6 @@
     <title>Login</title>
     <!-- bootstrap css  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <!-- select css  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-
-    <!-- ChartList CDNS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <link rel="stylesheet" href="./css/index.css">
 
 
@@ -44,7 +38,8 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <button  class="btn btn-primary" onclick="signUpClicked(this)">Submit</button>
+                    <button  class="btn btn-primary btn-sm" onclick="signUpClicked(this)">Sign Up</button>
+                    <a  class="btn btn-primary btn-sm " href="http://localhost/placement_prediction/login.php" ">Sign In</a>
                 </form>
             </div>
             <div class="col-md-3"> </div>

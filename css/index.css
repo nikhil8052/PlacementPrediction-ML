@@ -1,6 +1,8 @@
 .topbar{
     height: 60px;
-    border-bottom: 1px solid red;
+    background-color: #134F5C;
+    border-bottom: 1px solid #FFFFFF;
+    color: white;
 }
 
 body{
@@ -8,19 +10,22 @@ body{
 }
 
 .logo{
-    font-size: 28px ;
+   
     margin-top: 10px ;
-    font-weight: bold ;
     margin-left: 20px ;
 }
 
 .toptext{
     padding-top: 100px ;
 }
-
+.gc{
+    background-color: #1A232F !important;
+    /* background-color: #08BD80 !important; */
+    color:white ;
+}
 .unacadmy{
     background-color: #08BD80;
-    color: white; 
+    color: white !important; 
     margin-top: 20px ;
 }
 
@@ -29,11 +34,37 @@ body{
 }
 
 .result-div{
-    height: 100%;
+    height: 80%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
 #loading{
     padding-top:100px ;
     display: none ;
 
+}
+#reset-btn{
+
+       float: right;
+}
+
+.imgaboutus{
+    width: 200px ;
+    padding-left: 60px ;
+}
+
+.auhead{
+    padding-left: 60px ;
+  
+}
+
+.audes{
+    text-align: center !important;
+}
+.footer{
+    /* height: 270px ; */
+    background-color: #1A232F;
+    color:white ;
+    /* margin-bottom: 0px ;  */
 }

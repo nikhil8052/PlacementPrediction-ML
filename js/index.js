@@ -1,6 +1,8 @@
 
 
-$(".placed").css('display','none','!important')
+$(".placed").css('display', 'none', '!important')
+$(".not-placed").css('display', 'none', '!important')
+
 
 function loginClicked(e) {
     let email = document.getElementById("email").value;
@@ -54,16 +56,29 @@ function signUpClicked(e) {
 function predictClicked(e) {
 
     let loading = document.getElementById("loading");
-    $(loading).show();
-    $('#nosel').hide();
     let secondary = $('#10p').val();
     let seniorSecondary = $('#12p').val();
     let college = $('#collegep').val();
+    $(".placed").css('display', 'none', '!important')
+    $(".not-placed").css('display', 'none', '!important')
 
-    
     if (secondary == "" || college == "" || seniorSecondary == "") {
+        $("#emptyAlert").css("display", 'block');
+        setTimeout(() => {
+            $("#emptyAlert").css("display", 'none');
+        }, 2000);
         return;
     }
+
+    if (Number(secondary) > 100 || Number(seniorSecondary) > 100 || Number(college) > 100) {
+        $("#valuesAlert").css("display", 'block');
+        setTimeout(() => {
+            $("#valuesAlert").css("display", 'none');
+        }, 2000);
+        return;
+    }
+    $(loading).show();
+    $('#nosel').hide();
 
     let obj = {
         "secondary": secondary,
@@ -79,14 +94,20 @@ function predictClicked(e) {
         if (ans == '1') {
             $(loading).hide();
             console.log(" Placed ")
-            $(".result-div").css('background-image',`url('./images/congobg.webp')`)
-            $(".placed").css('display','block','!important')
+            $(".result-div").css('background-image', `url('./images/congobg.webp')`)
+            $(".result-div").css('background-repeat', `no-repeat`)
+            $(".placed").css('display', 'block', '!important')
 
 
         } else {
             console.log("Not placed ")
+            $(".result-div").css('background-image', `url('./images/congobg.webp')`)
+            $(".result-div").css('background-repeat', `no-repeat`)
+            $(".not-placed").css('display', 'block', '!important')
+            $(loading).hide();
+
         }
     })
 
+}
 
-}https://github.com/nikhil8052/PlacementPrediction-ML.git

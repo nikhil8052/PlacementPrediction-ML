@@ -24,35 +24,52 @@ if (isset($_GET['token'])) {
 
     <!-- bootstrap css  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <!-- select css  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-
-    <!-- ChartList CDNS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
 
     <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
-        include('./topbar.php');
+        include('./components/topbar.php');
     ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="./plugin/confetti-js-master/src/confetti.js"></script>
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <div id="valuesAlert" class="alert alert-primary w-70" role="alert" style="display: none ;">
+                        Please Enter Values less than 100.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="emptyAlert" class="alert alert-primary w-70" role="alert" style="display: none ;">
+                        Values are Empty, Please fill the values first.
+                    </div>
+                </div>
+            </div>
 
-
-
+        </div>
         <!-- If user is logged in then display this code  -->
         <div class="container mt-3">
+
             <div class="row">
                 <div class="card" style="width: 100%;">
                     <div class="card-body">
-                        <h4 class="card-title">Predict With Us.</h4>
+                        <div class="row mb-2">
+                            <div class="col-md-11">
+                                <h4 class="card-title">Predict With Us.</h4>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-dark" onclick="reset(this)" id='reset-btn'>Reset</button>
+
+                            </div>
+                        </div>
+
+
                         <div class="row">
+
+
                             <div class="col-md-6 border p-4 bs">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1"> Secondary Percentile (10th % ) * </label>
@@ -70,16 +87,22 @@ if (isset($_GET['token'])) {
 
                                 <button type="submit" onclick="predictClicked(this)" class="btn btn-primary">Submit</button>
                             </div>
-                            <div class="col-md-6 border bs p-4 ">
-                                <marquee behavior="" direction=""><h3 class="placed" >Congraculations</h3></marquee>
-                                
-                                <div class="row result-div" >
+                            <div class="col-md-6 border bs p-4 mm ">
+
+                                <div class="row result-div">
                                     <div class="col-md-3"></div>
-                                    <div class="col-md-6 result-div">
-                                        <div id="nosel" >
+                                    <div class="col-md-6 result-div ">
+                                        <marquee behavior="" direction="">
+                                            <h3 class="placed">Congraculations</h3>
+                                        </marquee>
+                                        <marquee behavior="" direction="">
+                                            <h3 class="not-placed">Not Placed.</h3>
+                                        </marquee>
+                                        <div id="nosel">
                                             <img src="./images/recycle.png" class="" alt="">
                                             <h3>No data selected.</h3>
                                         </div>
+
 
                                         <div id="loading">
                                             <div class="spinner-grow text-primary" role="status">
@@ -110,7 +133,7 @@ if (isset($_GET['token'])) {
                                     <div class="col-md-3">
                                     </div>
                                 </div>
-                                
+
 
                             </div>
                         </div>
@@ -120,6 +143,16 @@ if (isset($_GET['token'])) {
             </div>
         </div>
         <script src="./js/index.js"></script>
+
+        <!-- Include the about us page  -->
+        <?php include("./components/aboutus.php");
+        include("./components/footer.php");
+         ?>
+        <script>
+            function reset(e) {
+                window.location.reload();
+            }
+        </script>
 
     <?php
     } else header("Location: http://localhost/placement_prediction/login.php"); ?>
