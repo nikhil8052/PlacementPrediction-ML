@@ -1,0 +1,1 @@
+![alt text](https://github.com/nikhil8052/PlacementPrediction-ML/blob/master/project%20design/landing_page.png?raw=true)
